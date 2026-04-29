@@ -73,7 +73,43 @@
     });
   }
 
+  function initRegisterModal() {
+    var modal = document.getElementById("register-modal");
+    if (!modal) return;
+
+    var openers = document.querySelectorAll(".js-open-register");
+    var closers = modal.querySelectorAll("[data-close-register]");
+
+    function openModal() {
+      modal.removeAttribute("hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.setAttribute("hidden", "");
+      document.body.style.overflow = "";
+    }
+
+    openers.forEach(function (button) {
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        openModal();
+      });
+    });
+
+    closers.forEach(function (el) {
+      el.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !modal.hasAttribute("hidden")) {
+        closeModal();
+      }
+    });
+  }
+
   updateCountdown();
   setInterval(updateCountdown, 1000);
   initMobileNav();
+  initRegisterModal();
 })();
