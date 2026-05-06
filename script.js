@@ -73,7 +73,18 @@
     });
   }
 
+  function initRegistrationForm() {
+    var form = document.getElementById("registration-form");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      window.location.href = "thank-you.html";
+    });
+  }
+
   updateCountdown();
   setInterval(updateCountdown, 1000);
   initMobileNav();
+  initRegistrationForm();
 })();

@@ -113,48 +113,67 @@
       </div>
     </section>
 
-    <section id="details" class="section section-details">
+    <section id="details" class="section section-details" aria-labelledby="details-title">
       <div class="container">
-        <h2 class="section-title">Event Information</h2>
-        <dl class="details-board">
-          <div class="detail-row">
-            <dt>Event</dt>
-            <dd>Gtext 18th Anniversary Conference &amp; Exhibition</dd>
+        <h2 id="details-title" class="section-title">Event Information</h2>
+        <div class="details-register-grid">
+          <div class="details-register-col details-register-col-info">
+            <dl class="details-board">
+              <div class="detail-row">
+                <dt>Event</dt>
+                <dd>Gtext 18th Anniversary Conference &amp; Exhibition</dd>
+              </div>
+              <div class="detail-row">
+                <dt>Theme</dt>
+                <dd>Global Real Estate Investment &amp; Development</dd>
+              </div>
+              <div class="detail-row">
+                <dt>Date</dt>
+                <dd>Thursday, 28th May 2026</dd>
+              </div>
+              <div class="detail-row">
+                <dt>Time</dt>
+                <dd>10:00 AM</dd>
+              </div>
+              <div class="detail-row">
+                <dt>Venue</dt>
+                <dd>Oriental Hotel Lagos</dd>
+              </div>
+              <div class="detail-row detail-row-highlight">
+                <dt>Fee</dt>
+                <dd>FREE <span class="detail-note">(Strictly by registration and confirmed ticket)</span></dd>
+              </div>
+            </dl>
           </div>
-          <div class="detail-row">
-            <dt>Theme</dt>
-            <dd>Global Real Estate Investment &amp; Development</dd>
+          <div id="register" class="details-register-col details-register-col-form">
+            <div class="register-panel">
+              <h3 class="register-panel-title">Register for your free ticket</h3>
+              <p class="register-panel-note">Attendance is completely free. Spaces are limited — complete the form below to reserve your seat.</p>
+              <form class="register-form" id="registration-form" action="#" method="post">
+                <div class="form-fields">
+                  <label class="form-field">
+                    <span class="form-label">Full name</span>
+                    <input type="text" name="full_name" autocomplete="name" required placeholder="Your full name" />
+                  </label>
+                  <label class="form-field">
+                    <span class="form-label">Email</span>
+                    <input type="email" name="email" autocomplete="email" required placeholder="you@example.com" />
+                  </label>
+                  <label class="form-field">
+                    <span class="form-label">Phone</span>
+                    <input type="tel" name="phone" autocomplete="tel" required placeholder="+234 …" />
+                  </label>
+                  <label class="form-field">
+                    <span class="form-label">Company / role <span class="form-label-optional">(optional)</span></span>
+                    <input type="text" name="company" autocomplete="organization" placeholder="Company or job title" />
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">Submit registration</button>
+              </form>
+              <p class="register-panel-trust">Only confirmed attendees will be granted access to the venue.</p>
+            </div>
           </div>
-          <div class="detail-row">
-            <dt>Date</dt>
-            <dd>Thursday, 28th May 2026</dd>
-          </div>
-          <div class="detail-row">
-            <dt>Time</dt>
-            <dd>10:00 AM</dd>
-          </div>
-          <div class="detail-row">
-            <dt>Venue</dt>
-            <dd>Oriental Hotel Lagos</dd>
-          </div>
-          <div class="detail-row detail-row-highlight">
-            <dt>Fee</dt>
-            <dd>FREE <span class="detail-note">(Strictly by registration and confirmed ticket)</span></dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <section id="register" class="section section-register">
-      <div class="container narrow">
-        <h2 class="section-title">Secure Your Seat Now</h2>
-        <p class="register-lead">Attendance is completely free, but spaces are limited and strictly reserved for registered participants with confirmed tickets.</p>
-        <p class="register-lead">Don’t miss this opportunity to be part of one of the most anticipated real estate events of the year.</p>
-        <div class="register-actions">
-          <a href="#" class="btn btn-primary">Register Now</a>
-          <a href="#" class="btn btn-outline">Get Free Ticket</a>
         </div>
-        <p class="register-trust">Only confirmed attendees will be granted access to the venue.</p>
       </div>
     </section>
 
