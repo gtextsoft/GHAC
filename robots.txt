@@ -1,0 +1,5 @@
+# Allow all crawlers. Replace https://example.com with your live site URL.
+User-agent: *
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml
