@@ -75,10 +75,13 @@
 
   function initRegistrationForm() {
     var form = document.getElementById("registration-form");
-    var block = document.getElementById("registration-form-block");
-    var success = document.getElementById("registration-success");
     var errEl = document.getElementById("registration-error");
-    if (!form || !block || !success) return;
+    if (!form) return;
+
+    var nextInput = form.querySelector('input[name="_next"]');
+    if (nextInput) {
+      nextInput.value = new URL("thank-you.html", window.location.href).href;
+    }
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -115,11 +118,7 @@
           });
         })
         .then(function () {
-          block.setAttribute("hidden", "");
-          success.removeAttribute("hidden");
-          var heading = document.getElementById("registration-success-heading");
-          if (heading) heading.focus();
-          success.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          window.location.assign(new URL("thank-you.html", window.location.href));
         })
         .catch(function (err) {
           if (errEl) {
