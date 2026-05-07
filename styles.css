@@ -751,6 +751,140 @@ img {
   scroll-margin-top: calc(var(--header-h) + 1rem);
 }
 
+.section-register {
+  background:
+    radial-gradient(ellipse 90% 50% at 50% -20%, rgba(154, 123, 60, 0.14), transparent 55%),
+    linear-gradient(180deg, var(--paper-dark) 0%, var(--paper) 45%, var(--white) 100%);
+  border-top: 1px solid var(--line-strong);
+}
+
+.register-shell {
+  position: relative;
+  max-width: 44rem;
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 2.85rem);
+  background: var(--white);
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+  box-shadow:
+    0 1px 0 rgba(18, 21, 26, 0.04),
+    0 24px 48px rgba(18, 21, 26, 0.08);
+}
+
+.register-shell::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 3px 0 0 3px;
+  background: linear-gradient(180deg, var(--brass-bright), var(--brass));
+}
+
+.register-card-head {
+  text-align: left;
+  margin-bottom: 1.75rem;
+  padding-left: 0.35rem;
+}
+
+.register-kicker {
+  margin: 0 0 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.register-card-title {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(1.65rem, 3.5vw, 2.1rem);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 0.85rem;
+}
+
+.register-card-lead {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 38rem;
+}
+
+.register-points {
+  list-style: none;
+  margin: 0 0 1.85rem;
+  padding: 1.15rem 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.register-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.register-point strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.register-point-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.1rem;
+  color: var(--brass);
+  background: var(--brass-dim);
+  border: 1px solid rgba(154, 123, 60, 0.22);
+  border-radius: 2px;
+}
+
+.register-point-icon svg {
+  display: block;
+}
+
+.register-card-footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.register-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.register-card-actions .btn-lg {
+  min-width: min(100%, 14rem);
+  justify-content: center;
+}
+
+.register-card-footnote {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 34rem;
+}
+
 .details-register-grid {
   display: grid;
   gap: 2rem;
