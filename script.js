@@ -135,8 +135,26 @@
     });
   }
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  var countdownTimer = null;
+  function startCountdownTimer() {
+    if (!document.getElementById("countdown")) return;
+    updateCountdown();
+    if (countdownTimer) clearInterval(countdownTimer);
+    countdownTimer = setInterval(updateCountdown, 1000);
+  }
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      if (countdownTimer) {
+        clearInterval(countdownTimer);
+        countdownTimer = null;
+      }
+    } else {
+      startCountdownTimer();
+    }
+  });
+
+  startCountdownTimer();
   initMobileNav();
   initRegistrationForm();
 })();
