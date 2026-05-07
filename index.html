@@ -66,7 +66,7 @@
           }
         },
         "organizer": { "@id": "https://example.com/#organization" },
-        "performer": { "@type": "Organization", "name": "Gtext Holdings" },
+        "performer": { "@type": "Person", "name": "Dr Stephen Akintayo" },
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -95,6 +95,7 @@
         <a href="#about">About</a>
         <a href="#gain">Benefits</a>
         <a href="#audience">Audience</a>
+        <a href="#speaker">Speaker</a>
         <a href="#details">Details</a>
         <a href="#" class="nav-cta js-open-register">Register</a>
       </nav>
@@ -106,6 +107,7 @@
       <a href="#about">About</a>
       <a href="#gain">Benefits</a>
       <a href="#audience">Audience</a>
+      <a href="#speaker">Speaker</a>
       <a href="#details">Details</a>
       <a href="#" class="js-open-register">Register</a>
     </div>
@@ -122,7 +124,7 @@
 
         <ul class="hero-meta" role="list">
           <li><span class="meta-icon" aria-hidden="true">📅</span> Thursday, 28th May 2026</li>
-          <li><span class="meta-icon" aria-hidden="true">🕙</span> 10:00 AM</li>
+          <li><span class="meta-icon" aria-hidden="true">🕙</span> 08:00 AM</li>
           <li><span class="meta-icon" aria-hidden="true">📍</span> Oriental Hotel Lagos</li>
         </ul>
 
@@ -189,33 +191,57 @@
 
     <section id="details" class="section section-details" aria-labelledby="details-title">
       <div class="container">
-        <h2 class="section-title">Event Information</h2>
-        <dl class="details-board">
-          <div class="detail-row">
-            <dt>Event</dt>
-            <dd>Gtext 18th Anniversary Conference &amp; Exhibition</dd>
+        <h2 id="details-title" class="section-title">Event Information</h2>
+        <div class="details-speaker-grid">
+          <div class="details-info-col">
+            <dl class="details-board details-board-fill">
+              <div class="detail-row">
+                <dt>Event</dt>
+                <dd>Gtext 18th Anniversary Conference &amp; Exhibition</dd>
+              </div>
+              <div class="detail-row">
+                <dt>Theme</dt>
+                <dd>Global Real Estate Investment &amp; Development</dd>
+              </div>
+              <div class="detail-row">
+                <dt>Date</dt>
+                <dd>Thursday, 28th May 2026</dd>
+              </div>
+              <div class="detail-row">
+                <dt>Time</dt>
+                <dd>10:00 AM</dd>
+              </div>
+              <div class="detail-row">
+                <dt>Venue</dt>
+                <dd>Oriental Hotel Lagos</dd>
+              </div>
+              <div class="detail-row detail-row-highlight">
+                <dt>Fee</dt>
+                <dd>FREE <span class="detail-note">(Strictly by registration and confirmed ticket)</span></dd>
+              </div>
+            </dl>
           </div>
-          <div class="detail-row">
-            <dt>Theme</dt>
-            <dd>Global Real Estate Investment &amp; Development</dd>
-          </div>
-          <div class="detail-row">
-            <dt>Date</dt>
-            <dd>Thursday, 28th May 2026</dd>
-          </div>
-          <div class="detail-row">
-            <dt>Time</dt>
-            <dd>10:00 AM</dd>
-          </div>
-          <div class="detail-row">
-            <dt>Venue</dt>
-            <dd>Oriental Hotel Lagos</dd>
-          </div>
-          <div class="detail-row detail-row-highlight">
-            <dt>Fee</dt>
-            <dd>FREE <span class="detail-note">(Strictly by registration and confirmed ticket)</span></dd>
-          </div>
-        </dl>
+          <aside id="speaker" class="details-speaker-col" aria-labelledby="speaker-aside-label">
+            <p id="speaker-aside-label" class="details-speaker-label">Featured speaker</p>
+            <article class="speaker-card">
+              <div class="speaker-photo-wrap">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLcwh0tJDo7iJy0BEbAzn07BfUXEDZ6J1aQA&amp;s"
+                  alt="Dr Stephen Akintayo"
+                  width="400"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
+                  class="speaker-photo"
+                />
+              </div>
+              <div class="speaker-text">
+                <h3 class="speaker-name">Dr Stephen Akintayo</h3>
+                <p class="speaker-role">Featured speaker · Global real estate investment and wealth creation</p>
+              </div>
+            </article>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -260,7 +286,7 @@
     <section class="section section-brand" aria-labelledby="brand-title">
       <div class="container narrow">
         <h2 id="brand-title" class="section-title">Powered by Gtext Holdings</h2>
-        <p class="brand-copy">Gtext Holdings hosts the Real Estate Investors Developers Conference to convene the people who finance and build real estate. Drawing on deep experience across the sector, we shape a programme centred on relationships, credible opportunities, and long-term growth—not hype.</p>
+        <p class="brand-copy">Gtext Holdings hosts the Real Estate Investors Developers Conference to convene the people who finance and build real estate. Drawing on deep experience across the sector, we shape a programme centred on relationships, credible opportunities, and long-term growth not hype.</p>
       </div>
     </section>
 
