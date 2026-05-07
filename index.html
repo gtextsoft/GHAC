@@ -108,7 +108,7 @@
         <a href="#audience">Audience</a>
         <a href="#speaker">Speaker</a>
         <a href="#details">Details</a>
-        <a href="#" class="nav-cta js-open-register">Register</a>
+        <a href="#register-form" class="nav-cta">Register</a>
       </nav>
       <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -120,7 +120,7 @@
       <a href="#audience">Audience</a>
       <a href="#speaker">Speaker</a>
       <a href="#details">Details</a>
-      <a href="#" class="js-open-register">Register</a>
+      <a href="#register-form">Register</a>
     </div>
   </header>
 
@@ -142,7 +142,7 @@
         <p class="hero-lead">Whether you deploy capital or build the skyline, spend a focused day with investors, developers, and sector leaders sharp content, candid conversations, and connections that can advance your next deal or project.</p>
 
         <div class="hero-actions">
-          <a href="#" class="btn btn-primary js-open-register">Register Now <span class="btn-note">(Free Ticket)</span></a>
+          <a href="#register-form" class="btn btn-primary">Register Now <span class="btn-note">(Free Ticket)</span></a>
         </div>
         <p class="hero-urgency">Free entry — strictly by registration and confirmed ticket only.</p>
       </div>
@@ -203,7 +203,7 @@
     <section id="details" class="section section-details" aria-labelledby="details-title">
       <div class="container">
         <h2 id="details-title" class="section-title">Event Information</h2>
-        <div class="details-speaker-grid">
+        <div class="details-register-grid">
           <div class="details-info-col">
             <dl class="details-board details-board-fill">
               <div class="detail-row">
@@ -232,56 +232,102 @@
               </div>
             </dl>
           </div>
-          <aside id="speaker" class="details-speaker-col" aria-labelledby="speaker-aside-label">
-            <p id="speaker-aside-label" class="details-speaker-label">Featured speaker</p>
-            <article class="speaker-card">
-              <div class="speaker-photo-wrap">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLcwh0tJDo7iJy0BEbAzn07BfUXEDZ6J1aQA&amp;s"
-                  alt="Dr Stephen Akintayo"
-                  width="400"
-                  height="400"
-                  loading="lazy"
-                  decoding="async"
-                  class="speaker-photo"
-                />
-              </div>
-              <div class="speaker-text">
-                <h3 class="speaker-name">Dr Stephen Akintayo</h3>
-                <p class="speaker-role">Featured speaker · Global real estate investment and wealth creation</p>
-              </div>
-            </article>
-          </aside>
+          <div class="details-form-col">
+            <div class="register-panel register-panel-inline" id="register-form">
+              <h3 class="register-panel-title">Register for the conference</h3>
+              <p class="register-panel-note">Real Estate Investors Developers Conference · 28 May 2026. Free ticket; submit your details to request a confirmed seat.</p>
+              <form class="register-form register-form-inline" action="https://formspree.io/f/mnjlernj" method="POST">
+                <label for="full-name">Full name</label>
+                <input id="full-name" name="fullName" type="text" autocomplete="name" required />
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+
+                <label for="phone">Phone number <span class="label-hint">(WhatsApp only)</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+
+                <fieldset class="form-fieldset">
+                  <legend>How will you be joining us?</legend>
+                  <div class="form-radio-group">
+                    <label class="form-radio-label"><input type="radio" name="attendanceMode" value="Physical - Oriental Hotel, Lagos" required /> Physical — Oriental Hotel, Lagos</label>
+                    <label class="form-radio-label"><input type="radio" name="attendanceMode" value="Virtual - Online" /> Virtual — Online</label>
+                  </div>
+                </fieldset>
+
+                <label for="professional-profile">Which best describes you?</label>
+                <select id="professional-profile" name="professionalProfile" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Active Investor">Active Investor</option>
+                  <option value="Real Estate Developer">Real Estate Developer</option>
+                  <option value="Agent/Broker">Agent/Broker</option>
+                  <option value="Corporate Executive">Corporate Executive</option>
+                  <option value="Seeking First Investment">Seeking First Investment</option>
+                  <option value="Other">Other</option>
+                </select>
+
+                <label for="company-name">Company name</label>
+                <input id="company-name" name="companyName" type="text" autocomplete="organization" />
+
+                <label for="industry">What industry are you into?</label>
+                <input id="industry" name="industry" type="text" autocomplete="organization-title" />
+
+                <button type="submit" class="btn btn-primary btn-submit">Submit registration</button>
+              </form>
+              <p class="register-panel-trust">You’ll receive next steps after we process your submission. No payment details required.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="register" class="section section-register" aria-labelledby="register-title">
-      <div class="container register-shell">
-        <header class="register-card-head">
-          <p class="register-kicker">Registration</p>
-          <h2 id="register-title" class="register-card-title">Secure Your Seat Now</h2>
-          <p class="register-card-lead">Complimentary access to a full day of sessions and curated networking at the Oriental Hotel. Places are reserved for attendees with a confirmed ticket only.</p>
-        </header>
-        <ul class="register-points" role="list">
-          <li class="register-point">
-            <span class="register-point-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 18 18" focusable="false"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9 3 3 7-7"/></svg></span>
-            <span><strong>No charge</strong> — complete the form to request your free ticket and confirmation.</span>
-          </li>
-          <li class="register-point">
-            <span class="register-point-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 18 18" focusable="false"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9 3 3 7-7"/></svg></span>
-            <span><strong>Where &amp; when</strong> — Thursday 28 May 2026 · Oriental Hotel, Lagos · from 10:00 AM.</span>
-          </li>
-          <li class="register-point">
-            <span class="register-point-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 18 18" focusable="false"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9 3 3 7-7"/></svg></span>
-            <span><strong>Limited capacity</strong> — priority for registered investors, developers, and invited professionals.</span>
-          </li>
-        </ul>
-        <div class="register-card-footer">
-          <div class="register-card-actions">
-            <a href="#" class="btn btn-primary btn-lg js-open-register">Register now</a>
+      <div class="container register-speaker-grid">
+        <aside id="speaker" class="register-speaker-col" aria-labelledby="register-speaker-heading">
+          <p id="register-speaker-heading" class="register-speaker-kicker">Featured speaker</p>
+          <article class="speaker-card speaker-card-register">
+            <div class="speaker-photo-wrap">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLcwh0tJDo7iJy0BEbAzn07BfUXEDZ6J1aQA&amp;s"
+                alt="Dr Stephen Akintayo"
+                width="400"
+                height="400"
+                loading="lazy"
+                decoding="async"
+                class="speaker-photo"
+              />
+            </div>
+            <div class="speaker-text">
+              <h3 class="speaker-name">Dr Stephen Akintayo</h3>
+              <p class="speaker-role">Featured speaker · Global real estate investment and wealth creation</p>
+            </div>
+          </article>
+        </aside>
+        <div class="register-shell">
+          <header class="register-card-head">
+            <p class="register-kicker">Registration</p>
+            <h2 id="register-title" class="register-card-title">Secure Your Seat Now</h2>
+            <p class="register-card-lead">Complimentary access to a full day of sessions and curated networking at the Oriental Hotel. Places are reserved for attendees with a confirmed ticket only.</p>
+          </header>
+          <ul class="register-points" role="list">
+            <li class="register-point">
+              <span class="register-point-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 18 18" focusable="false"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9 3 3 7-7"/></svg></span>
+              <span><strong>No charge</strong> — complete the form to request your free ticket and confirmation.</span>
+            </li>
+            <li class="register-point">
+              <span class="register-point-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 18 18" focusable="false"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9 3 3 7-7"/></svg></span>
+              <span><strong>Where &amp; when</strong> — Thursday 28 May 2026 · Oriental Hotel, Lagos · from 08:00 AM.</span>
+            </li>
+            <li class="register-point">
+              <span class="register-point-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 18 18" focusable="false"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9 3 3 7-7"/></svg></span>
+              <span><strong>Limited capacity</strong> — priority for registered investors, developers, and invited professionals.</span>
+            </li>
+          </ul>
+          <div class="register-card-footer">
+            <div class="register-card-actions">
+              <a href="#register-form" class="btn btn-primary btn-lg">Register now</a>
+            </div>
+            <p class="register-card-footnote">You’ll receive next steps after we process your submission. No payment details required.</p>
           </div>
-          <p class="register-card-footnote">You’ll receive next steps after we process your submission. No payment details required.</p>
         </div>
       </div>
     </section>
@@ -323,7 +369,7 @@
       <div class="container narrow">
         <h2 id="footer-cta-title" class="footer-cta-title">Don’t Miss Out</h2>
         <p class="footer-cta-copy">Lagos, 28 May 2026 - the meeting point for real estate investors and developers ready to do serious business.</p>
-        <a href="#" class="btn btn-primary btn-lg js-open-register">Reserve Your Free Seat Now</a>
+        <a href="#register-form" class="btn btn-primary btn-lg">Reserve Your Free Seat Now</a>
       </div>
     </section>
   </main>
@@ -334,31 +380,6 @@
       <p class="footer-meta">Real Estate Investors Developers Conference · May 2026 · Lagos</p>
     </div>
   </footer>
-
-  <div class="modal" id="register-modal" hidden>
-    <div class="modal-backdrop" data-close-register></div>
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="register-modal-title">
-      <button type="button" class="modal-close" aria-label="Close registration form" data-close-register>&times;</button>
-      <h2 id="register-modal-title" class="modal-title">Register for the conference</h2>
-      <p class="modal-subtitle">Real Estate Investors Developers Conference · 28 May 2026 · Oriental Hotel Lagos. Free ticket; details below secure your seat.</p>
-
-      <form class="register-form" action="https://formspree.io/f/mnjlernj" method="POST">
-        <label for="full-name">Full Name</label>
-        <input id="full-name" name="fullName" type="text" required />
-
-        <label for="email">Email Address</label>
-        <input id="email" name="email" type="email" required />
-
-        <label for="phone">Phone Number</label>
-        <input id="phone" name="phone" type="tel" required />
-
-        <label for="message">Message (Optional)</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-
-        <button type="submit" class="btn btn-primary">Submit Registration</button>
-      </form>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>

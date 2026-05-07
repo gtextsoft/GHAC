@@ -73,52 +73,7 @@
     });
   }
 
-  function initRegisterModal() {
-    var modal = document.getElementById("register-modal");
-    if (!modal) return;
-
-    var openers = document.querySelectorAll(".js-open-register");
-    var closers = modal.querySelectorAll("[data-close-register]");
-
-    function openModal(e) {
-      if (e) e.preventDefault();
-      modal.removeAttribute("hidden");
-      document.body.style.overflow = "hidden";
-      var closeBtn = modal.querySelector(".modal-close");
-      if (closeBtn) closeBtn.focus();
-    }
-
-    function closeModal() {
-      modal.setAttribute("hidden", "");
-      document.body.style.overflow = "";
-    }
-
-    openers.forEach(function (el) {
-      el.addEventListener("click", openModal);
-    });
-    closers.forEach(function (el) {
-      el.addEventListener("click", closeModal);
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key !== "Escape") return;
-      if (modal.hasAttribute("hidden")) return;
-      closeModal();
-    });
-  }
-
-  function initRegistrationForm() {
-    var form = document.getElementById("registration-form");
-    if (!form) return;
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      window.location.href = "thank-you.html";
-    });
-  }
-
   updateCountdown();
   setInterval(updateCountdown, 1000);
   initMobileNav();
-  initRegisterModal();
-  initRegistrationForm();
 })();

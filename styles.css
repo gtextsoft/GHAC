@@ -458,7 +458,9 @@ img {
   opacity: 0.75;
 }
 
-.register-form input {
+.register-form input,
+.register-form select,
+.register-form textarea {
   font-family: var(--font-sans);
   font-size: 1rem;
   padding: 0.65rem 0.75rem;
@@ -469,22 +471,96 @@ img {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.register-form input::placeholder {
+.register-form select {
+  cursor: pointer;
+  appearance: none;
+  padding-right: 2rem;
+  background-color: var(--paper);
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-soft) 50%), linear-gradient(135deg, var(--ink-soft) 50%, transparent 50%);
+  background-position: calc(100% - 1.1rem) 50%, calc(100% - 0.75rem) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.register-form input::placeholder,
+.register-form textarea::placeholder {
   color: rgba(42, 48, 56, 0.45);
 }
 
-.register-form input:hover {
+.register-form input:hover,
+.register-form select:hover,
+.register-form textarea:hover {
   border-color: rgba(18, 21, 26, 0.22);
 }
 
-.register-form input:focus {
+.register-form input:focus,
+.register-form select:focus,
+.register-form textarea:focus {
   outline: none;
   border-color: var(--brass);
   box-shadow: 0 0 0 3px var(--brass-dim);
 }
 
-.register-panel .register-form input {
-  background: var(--white);
+.register-panel .register-form input:not([type="radio"]),
+.register-panel .register-form select,
+.register-panel .register-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--white);
+}
+
+.register-form-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.register-form-inline > label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.label-hint {
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.form-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-fieldset legend {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.45rem;
+  padding: 0;
+}
+
+.form-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-radio-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.form-radio-label input {
+  margin: 0.2rem 0 0;
+  flex-shrink: 0;
+  width: auto;
+  accent-color: var(--ink);
 }
 
 .btn-submit {
@@ -704,7 +780,7 @@ img {
   border-top: 1px solid var(--line);
 }
 
-.details-speaker-grid {
+.details-register-grid {
   display: grid;
   gap: 2rem;
   align-items: start;
@@ -714,29 +790,29 @@ img {
   min-width: 0;
 }
 
-.details-speaker-col {
-  text-align: center;
+.details-form-col {
+  min-width: 0;
 }
 
-.details-speaker-label {
-  margin: 0 0 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--brass);
+.register-panel-inline {
+  text-align: left;
+}
+
+.register-panel-inline .register-panel-title,
+.register-panel-inline .register-panel-note {
+  text-align: left;
+}
+
+.register-panel-inline .register-panel-trust {
+  text-align: left;
+  margin-top: 1rem;
 }
 
 @media (min-width: 900px) {
-  .details-speaker-grid {
-    grid-template-columns: 1fr minmax(min(100%, 17rem), 22rem);
+  .details-register-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
     gap: 2.5rem 3rem;
     align-items: start;
-  }
-
-  .details-speaker-col .speaker-card {
-    margin-inline: 0;
-    max-width: none;
   }
 }
 
@@ -747,7 +823,8 @@ img {
 
 #details,
 #speaker,
-#register {
+#register,
+#register-form {
   scroll-margin-top: calc(var(--header-h) + 1rem);
 }
 
@@ -756,6 +833,63 @@ img {
     radial-gradient(ellipse 90% 50% at 50% -20%, rgba(154, 123, 60, 0.14), transparent 55%),
     linear-gradient(180deg, var(--paper-dark) 0%, var(--paper) 45%, var(--white) 100%);
   border-top: 1px solid var(--line-strong);
+}
+
+.register-speaker-grid {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.5rem);
+  align-items: start;
+}
+
+@media (max-width: 899px) {
+  .register-speaker-grid {
+    grid-template-areas:
+      "cta"
+      "speaker";
+  }
+
+  .register-speaker-grid .register-shell {
+    grid-area: cta;
+  }
+
+  .register-speaker-grid .register-speaker-col {
+    grid-area: speaker;
+  }
+}
+
+@media (min-width: 900px) {
+  .register-speaker-grid {
+    grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+    grid-template-areas: "speaker cta";
+    gap: 2.5rem 3rem;
+    align-items: stretch;
+  }
+}
+
+.register-speaker-grid .register-shell {
+  max-width: none;
+  margin-inline: 0;
+  width: 100%;
+}
+
+.register-speaker-col {
+  min-width: 0;
+}
+
+.register-speaker-kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.speaker-card-register {
+  max-width: none;
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .register-shell {
@@ -1154,93 +1288,8 @@ img {
   font-size: 0.8125rem;
 }
 
-/* Register modal */
-.modal[hidden] {
-  display: none;
-}
-
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 1200;
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  overflow-y: auto;
-}
-
-.modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(18, 21, 26, 0.6);
-}
-
-.modal-dialog {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 32rem);
-  max-height: calc(100vh - 2rem);
-  background: var(--white);
-  border: 1px solid var(--line-strong);
-  border-radius: 4px;
-  padding: 1.5rem;
-  box-shadow: 0 20px 50px rgba(18, 21, 26, 0.2);
-  overflow-y: auto;
-}
-
-.modal-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  border: none;
-  background: transparent;
-  color: var(--ink-soft);
-  font-size: 1.75rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.modal-title {
-  margin: 0 0 0.4rem;
-  font-family: var(--font-serif);
-  color: var(--ink);
-}
-
-.modal-subtitle {
-  margin: 0 0 1rem;
-}
-
-.register-form {
-  display: grid;
-  gap: 0.55rem;
-}
-
-.register-form label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.register-form input,
-.register-form textarea {
-  width: 100%;
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  color: var(--ink);
-  background: var(--paper);
-  border: 1px solid var(--line-strong);
-  border-radius: 3px;
-  padding: 0.65rem 0.75rem;
-  margin-bottom: 0.5rem;
-}
-
-.register-form textarea {
-  resize: vertical;
-}
-
-.register-form .btn {
-  width: 100%;
-  margin-top: 0.25rem;
+.register-form-inline .btn-submit {
+  margin-top: 0.35rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
