@@ -236,7 +236,8 @@
             <div class="register-panel register-panel-inline" id="register-form">
               <h3 class="register-panel-title">Register for the conference</h3>
               <p class="register-panel-note">Real Estate Investors Developers Conference · 28 May 2026. Free ticket; submit your details to request a confirmed seat.</p>
-              <form class="register-form register-form-inline" action="https://formspree.io/f/mnjlernj" method="POST">
+              <div id="registration-form-block" class="registration-form-block">
+              <form id="registration-form" class="register-form register-form-inline" action="https://formspree.io/f/mnjlernj" method="POST">
                 <label for="full-name">Full name</label>
                 <input id="full-name" name="fullName" type="text" autocomplete="name" required />
 
@@ -274,6 +275,19 @@
                 <button type="submit" class="btn btn-primary btn-submit">Submit registration</button>
               </form>
               <p class="register-panel-trust">You’ll receive next steps after we process your submission. No payment details required.</p>
+              </div>
+              <div id="registration-success" class="registration-success" role="status" aria-live="polite" hidden>
+                <h3 id="registration-success-heading" class="registration-success-title" tabindex="-1">Thank you — registration received</h3>
+                <p class="registration-success-lead">We’ve received your registration for the Real Estate Investors Developers Conference. We’ll contact you with next steps and your ticket confirmation.</p>
+                <p class="registration-success-community">Join our WhatsApp community to connect with attendees and stay up to date.</p>
+                <a
+                  href="https://chat.whatsapp.com/Hzbi21giJf1JGXsC3BEkIw"
+                  class="btn btn-primary registration-success-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Join the community</a>
+              </div>
+              <p id="registration-error" class="registration-error form-status is-error" hidden role="alert"></p>
             </div>
           </div>
         </div>

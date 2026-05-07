@@ -73,7 +73,71 @@
     });
   }
 
+  function initRegistrationForm() {
+    var form = document.getElementById("registration-form");
+    var block = document.getElementById("registration-form-block");
+    var success = document.getElementById("registration-success");
+    var errEl = document.getElementById("registration-error");
+    if (!form || !block || !success) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      if (errEl) {
+        errEl.setAttribute("hidden", "");
+        errEl.textContent = "";
+      }
+      var btn = form.querySelector('[type="submit"]');
+      if (btn) {
+        btn.disabled = true;
+        btn.setAttribute("aria-busy", "true");
+      }
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      })
+        .then(function (response) {
+          return response.json().catch(function () {
+            return {};
+          }).then(function (data) {
+            if (!response.ok) {
+              var msg = "Something went wrong. Please try again.";
+              if (data && typeof data.error === "string" && data.error) msg = data.error;
+              else if (data && Array.isArray(data.errors) && data.errors.length) {
+                var first = data.errors[0];
+                if (first && typeof first.message === "string") msg = first.message;
+              }
+              throw new Error(msg);
+            }
+            return data;
+          });
+        })
+        .then(function () {
+          block.setAttribute("hidden", "");
+          success.removeAttribute("hidden");
+          var heading = document.getElementById("registration-success-heading");
+          if (heading) heading.focus();
+          success.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        })
+        .catch(function (err) {
+          if (errEl) {
+            errEl.textContent = err && err.message ? err.message : "Something went wrong. Please try again.";
+            errEl.removeAttribute("hidden");
+          }
+        })
+        .finally(function () {
+          if (btn) {
+            btn.disabled = false;
+            btn.removeAttribute("aria-busy");
+          }
+        });
+    });
+  }
+
   updateCountdown();
   setInterval(updateCountdown, 1000);
   initMobileNav();
+  initRegistrationForm();
 })();

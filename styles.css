@@ -589,6 +589,59 @@ img {
   line-height: 1.5;
 }
 
+.registration-form-block {
+  margin: 0;
+}
+
+.registration-success {
+  padding: 0.5rem 0 0;
+  text-align: left;
+}
+
+.registration-success[hidden] {
+  display: none !important;
+}
+
+.registration-success-title {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.registration-success-lead {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+}
+
+.registration-success-community {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.registration-success-btn {
+  display: inline-flex;
+  margin-top: 0.15rem;
+}
+
+.registration-error {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.registration-error[hidden] {
+  display: none !important;
+}
+
 /* Sections */
 .section {
   padding: clamp(3.5rem, 8vw, 5.5rem) 1.5rem;
