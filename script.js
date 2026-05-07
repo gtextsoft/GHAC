@@ -76,7 +76,50 @@
   function initRegistrationForm() {
     var form = document.getElementById("registration-form");
     var errEl = document.getElementById("registration-error");
+    var overlay = document.getElementById("registration-submit-overlay");
+    var tipEl = document.getElementById("registration-submit-tip");
     if (!form) return;
+
+    var submitTips = [
+      "DICE 2026 puts developers and investors in the same room—with substance, not hype.",
+      "The exhibition floor is built for introductions that turn into real meetings.",
+      "Lagos, 28 May: sharp sessions plus space to discover projects and partners.",
+      "You’re moments away from your ticket link and the official WhatsApp circle.",
+    ];
+    var tipRotator = null;
+    var tipIndex = 0;
+
+    function clearTipRotator() {
+      if (tipRotator) {
+        clearInterval(tipRotator);
+        tipRotator = null;
+      }
+    }
+
+    function showSubmitOverlay() {
+      if (!overlay || !tipEl) return;
+      tipIndex = 0;
+      tipEl.textContent = submitTips[0];
+      clearTipRotator();
+      tipRotator = setInterval(function () {
+        tipIndex = (tipIndex + 1) % submitTips.length;
+        tipEl.textContent = submitTips[tipIndex];
+      }, 2800);
+      overlay.removeAttribute("hidden");
+      document.body.style.overflow = "hidden";
+      var titleEl = document.getElementById("registration-submit-title");
+      if (titleEl && typeof titleEl.focus === "function") {
+        requestAnimationFrame(function () {
+          titleEl.focus({ preventScroll: true });
+        });
+      }
+    }
+
+    function hideSubmitOverlay() {
+      clearTipRotator();
+      if (overlay) overlay.setAttribute("hidden", "");
+      document.body.style.overflow = "";
+    }
 
     var nextInput = form.querySelector('input[name="_next"]');
     if (nextInput) {
@@ -95,6 +138,9 @@
         btn.disabled = true;
         btn.setAttribute("aria-busy", "true");
       }
+
+      var willRedirect = false;
+      showSubmitOverlay();
 
       fetch(form.action, {
         method: "POST",
@@ -118,18 +164,25 @@
           });
         })
         .then(function () {
+          willRedirect = true;
           window.location.assign(new URL("thank-you.html", window.location.href));
         })
         .catch(function (err) {
+          hideSubmitOverlay();
           if (errEl) {
             errEl.textContent = err && err.message ? err.message : "Something went wrong. Please try again.";
             errEl.removeAttribute("hidden");
           }
+          if (btn && typeof btn.focus === "function") {
+            btn.focus();
+          }
         })
         .finally(function () {
-          if (btn) {
-            btn.disabled = false;
-            btn.removeAttribute("aria-busy");
+          if (!willRedirect) {
+            if (btn) {
+              btn.disabled = false;
+              btn.removeAttribute("aria-busy");
+            }
           }
         });
     });

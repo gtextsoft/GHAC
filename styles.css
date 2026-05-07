@@ -642,6 +642,80 @@ img {
   display: none !important;
 }
 
+/* Full-screen “submitting” state before redirect to thank-you */
+.registration-submit-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(1.25rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right))
+    max(1.25rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left));
+  background: rgba(18, 21, 26, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.registration-submit-overlay[hidden] {
+  display: none !important;
+}
+
+.registration-submit-overlay-inner {
+  max-width: 22rem;
+  width: 100%;
+  padding: 1.75rem 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  box-shadow: 0 24px 64px rgba(18, 21, 26, 0.2);
+  text-align: center;
+}
+
+.registration-submit-spinner {
+  box-sizing: border-box;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0 auto 1.25rem;
+  border: 3px solid var(--paper-dark);
+  border-top-color: var(--brass-bright);
+  border-radius: 50%;
+  animation: registration-submit-spin 0.85s linear infinite;
+}
+
+.registration-submit-title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.registration-submit-tip {
+  margin: 0 0 0.85rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  min-height: 2.9rem;
+}
+
+.registration-submit-sub {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+@keyframes registration-submit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Sections */
 .section {
   padding: clamp(3.5rem, 8vw, 5.5rem) 1.5rem;
@@ -1636,5 +1710,11 @@ img {
 
   .btn:active {
     transform: none;
+  }
+
+  .registration-submit-spinner {
+    animation: none;
+    border-top-color: var(--brass-bright);
+    opacity: 0.9;
   }
 }
