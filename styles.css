@@ -526,6 +526,17 @@ img {
   color: var(--ink-soft);
 }
 
+.form-field-hint {
+  margin: -0.35rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.register-form-inline > .form-field-hint + input {
+  margin-top: 0;
+}
+
 .form-fieldset {
   border: none;
   padding: 0;

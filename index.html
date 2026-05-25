@@ -281,6 +281,17 @@
                 <label for="industry">What industry are you into?</label>
                 <input id="industry" name="industry" type="text" autocomplete="organization-title" />
 
+                <label for="referred-by">Who referred you? <span class="label-hint">(optional)</span></label>
+                <p class="form-field-hint" id="referred-by-hint">If someone invited you to DICE 2026, share their name so we can thank them. Leave blank if you found us on your own.</p>
+                <input
+                  id="referred-by"
+                  name="referredBy"
+                  type="text"
+                  autocomplete="off"
+                  aria-describedby="referred-by-hint"
+                  placeholder="e.g. colleague, partner, or host name"
+                />
+
                 <button type="submit" class="btn btn-primary btn-submit">Submit registration</button>
               </form>
               <p class="register-panel-trust">You’ll receive next steps after we process your submission. No payment details required.</p>
