@@ -111,7 +111,8 @@ img {
 .logo-text {
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: 1.05rem;
+  font-size: clamp(0.78rem, 2.4vw, 1.05rem);
+  line-height: 1.25;
   color: var(--ink);
   letter-spacing: 0.02em;
   margin-right: auto;
@@ -281,8 +282,19 @@ img {
   font-size: clamp(1.85rem, 5vw, 2.85rem);
   line-height: 1.12;
   color: var(--ink);
-  margin: 0 0 1rem;
+  margin: 0 0 0.65rem;
   letter-spacing: -0.02em;
+}
+
+.hero-tagline {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(1.1rem, 2.8vw, 1.45rem);
+  font-style: italic;
+  color: var(--brass);
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
 }
 
 .hero-subtitle {
@@ -882,6 +894,39 @@ img {
   font-weight: 500;
   color: var(--ink-soft);
   line-height: 1.55;
+}
+
+.speaker-host-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.speaker-roster {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.speaker-roster-item {
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  text-align: left;
+}
+
+.speaker-roster-name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.3;
 }
 
 .audience-list {
@@ -1866,6 +1911,15 @@ img {
 .footer-meta {
   margin: 0;
   font-size: 0.8125rem;
+}
+
+.footer-contact {
+  margin-top: 0.5rem;
+  line-height: 1.55;
+}
+
+.footer-contact a {
+  color: inherit;
 }
 
 .register-form-inline .btn-submit {

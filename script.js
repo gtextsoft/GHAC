@@ -1,9 +1,9 @@
 (function () {
   "use strict";
 
-  /** Event start: Thursday 28 May 2026, 10:00 AM West Africa Time (Lagos) */
+  /** Event start: Saturday 11 July 2026, 9:00 AM West Africa Time (Abuja) */
   function getTargetDate() {
-    return new Date("2026-05-28T10:00:00+01:00");
+    return new Date("2026-07-11T09:00:00+01:00");
   }
 
   function pad(n) {
@@ -83,7 +83,7 @@
     var submitTips = [
       "DICE 2026 puts developers and investors in the same room—with substance, not hype.",
       "The exhibition floor is built for introductions that turn into real meetings.",
-      "Lagos, 28 May: sharp sessions plus space to discover projects and partners.",
+      "Abuja, 11 July: sharp sessions plus space to discover projects and partners.",
       "You’re moments away from your ticket link and the official WhatsApp circle.",
     ];
     var tipRotator = null;
